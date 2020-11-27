@@ -1,0 +1,50 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+#confetti {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+}
+
+#text {
+  color: white;
+}
+
+.outer {
+  height: 100vh;
+  width: 100vw;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.card {
+  display: inline-block;
+}
+
+.content {
+  padding-left: 10px;
+  padding-right: 10px;
+  color: white;
+}
+
+.content h3 {
+  font-size: 5rem;
+}
+
+.content h1 {
+  font-size: 8rem;
+}
+
+.content button {
+  font-size: 2em;
+}
+/*# sourceMappingURL=confetti.css.map */

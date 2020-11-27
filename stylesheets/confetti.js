@@ -1,7 +1,5 @@
-view = {};
-view.confettiTrigger = () =>{
-    console.log('bruh');
-    var retina = window.devicePixelRatio,
+var confettiTrigger = function(){
+  var retina = window.devicePixelRatio,
 
     // Math shorthands
     PI = Math.PI,
@@ -45,9 +43,8 @@ view.confettiTrigger = () =>{
       cancel.call(w, id);
     };
   }(window));
-  
-//   document.addEventListener("DOMContentLoaded", function () {
-    console.log('loaded');
+
+  document.addEventListener("DOMContentLoaded", function () {
     var speed = 50,
       duration = (1.0 / speed),
       confettiRibbonCount = 11,
@@ -395,156 +392,5 @@ view.confettiTrigger = () =>{
     window.addEventListener('resize', function (event) {
       confetti.resize();
     });
-//   });
-  console.log('bruuhhhh')
+  });
 }
-view.setActiveScreen = (screenName) => {
-    switch (screenName) {
-        case 'quizPage':
-            // $('body').backgroundColor = 'white';
-            $('body').html(() => {
-                return components.quizPage;
-            })
-
-            break;
-        case 'chartBoard':
-            $('body').html(() => {
-                return components.bruh;
-            })
-            break
-        case 'loadingScreen':
-            // $('head').append('<link rel="stylesheet" href="./loadingScreen.css">')
-            $('body').html(() => {
-                return components.loadingScreen;
-            })
-            view.startNewGame();
-            break;
-        case 'scoreBoard':
-            
-            let score = model.playerInfo.score;
-            let name = model.playerInfo.name;
-            $('body').html(() => {
-                return components.scoreBoard;
-            })
-            
-            $('.content h3').text(`Chúc mừng bạn ${name} , bạn được`)
-            $('.content h1').text(`${score}`)
-            view.confettiTrigger();
-            break;
-        case 'landingPage':
-            $('body').html(() => {
-                return components.landingPage;
-            })
-            break;
-        case 'board':
-            $('body').html(() => {
-                return components.board;
-            })
-    }
-}
-let score = 0;
-view.sendQuestion = (question, pos, len) => {
-    $('#question-title').text(() => {
-        return question.questionTitle;
-    });
-    $('#answer-1').text(() => {
-        return question.answers[0].value;
-    })
-    $('#answer-2').text(() => {
-        return question.answers[1].value;
-    })
-    $('#answer-3').text(() => {
-        return question.answers[2].value;
-    })
-    $('#answer-4').text(() => {
-        return question.answers[3].value;
-    })
-
-    $('.images img').attr('src', question.image)
-    $('.question-container h4').text(() => {
-        return `Question ${pos + 1}/${len}`
-    })
-    $('#scoreVal').text(() => {
-        return score;
-    })
-    let progress = (pos / (len - 1)) * 100;
-    console.log(progress)
-    let bar1 = new ldBar('#progress');
-    let bar2 = document.getElementById('progress').ldBar;
-    bar1.set(progress);
-    // console.log('hiii')
-}
-view.showQuestion = (question, index, data) => {
-    if (index < data.length) {
-        console.log(index);
-        view.sendQuestion(question, index, data.length);
-    }
-    else {
-        // alert(`You've got ${score}`)
-        model.playerInfo.score=score;
-        view.setActiveScreen('scoreBoard')
-    }
-}
-view.startNewGame = async () => {
-
-    
-    firebase.firestore().collection('questions')
-        .get()
-        .then(response => {
-            let index = 0;
-            // console.log(response.docs)
-            function shuffle(array) {
-                for (var i = array.length - 1; i > 0; i--) {
-                    var j = Math.floor(Math.random() * (i + 1));
-                    var temp = array[i];
-                    array[i] = array[j];
-                    array[j] = temp;
-                }
-                return array;
-              }
-            response = shuffle(response.docs);
-            console.log(response);
-            let data = response.map(question => { 
-                // shuffle(questions.answers)
-                let dat = getDataFromDoc(question) ;
-                shuffle(dat.answers)
-                // console.log(dat);
-                return dat;
-            });
-            
-            console.log(data);
-            view.setActiveScreen('quizPage');
-            view.showQuestion(data[index], index, data);
-            $('.answers button').click(function () {
-                var trueAns;
-                data[index].answers.map((item, index) => {
-                    if (item.isTrue) trueAns = index + 1;
-                })
-                index += 1;
-                // console.log(`${this.id} = ${trueAns}`)
-                if (this.id == `answer-${trueAns}`) {
-                    let prevColor = this.style.backgroundColor;
-                    this.style = 'background-color: lime';
-                    score += 10;
-                    // confetti.render();
-                    setTimeout(() => {
-                        this.style = `background-color: ${prevColor}`;
-                        // confetti.render();
-                        view.showQuestion(data[index], index, data)
-                    },2000)
-                }
-                else {
-                    let prevColor = this.style.backgroundColor;
-                    this.style = 'background-color: red';
-                    setTimeout(() => {
-                        this.style = `background-color: ${prevColor}`;
-                        view.showQuestion(data[index], index, data)
-                    },2000)
-                    
-                }
-
-            })
-        })
-
-}
-

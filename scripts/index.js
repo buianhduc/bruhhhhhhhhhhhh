@@ -12,8 +12,16 @@ let init =  () => {
       // Initialize Firebase
       firebase.initializeApp(firebaseConfig);
       firebase.analytics();
-      view.setActiveScreen('quizPage')
-      
+      // view.confettiTrigger();
+      view.setActiveScreen('landingPage')
 }
 
 init()
+getDataFromDoc = (res) => {
+  let data = res.data();
+  data.id = res.id;
+  return data;
+}
+getDataFromDocs = (res) => {
+  return res.map(getDataFromDoc)
+}

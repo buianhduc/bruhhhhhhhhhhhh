@@ -1,0 +1,281 @@
+body {
+  background: #292b37;
+}
+
+#loadingScreen div {
+  position: relative;
+  width: 70px;
+  height: 34px;
+  margin: 50px auto;
+  -webkit-transform: scale(1.3);
+          transform: scale(1.3);
+}
+
+#loadingScreen span, #loadingScreen p {
+  offset-path: path("M67.3,17.8c0-9.3-4.8-14.5-13.8-14.5C41.9,3.2,35.7,17,35.7,17s-6.2,13.8-17.8,13.8C10,30.8,4,25.5,4,17.7 C4, 9.6, 10, 3.2, 17.8, 3.2C29.4, 3.2, 35.7, 17, 35.7, 17s6.2, 13.8, 17.8, 13.8C61.4, 30.8, 67.3, 24.8, 67.3, 17.8z");
+  position: absolute;
+}
+
+#loadingScreen span {
+  color: #fff;
+  font-size: 12px;
+  -webkit-animation: path 1.4s linear infinite;
+          animation: path 1.4s linear infinite;
+}
+
+#loadingScreen p {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  opacity: 0;
+  motion-rotation: auto 45deg;
+  background: #fff;
+  -webkit-animation: path 1.4s linear infinite, dot linear forwards;
+          animation: path 1.4s linear infinite, dot linear forwards;
+}
+
+#loadingScreen p:nth-of-type(1) {
+  background: #bf4040;
+  -webkit-animation-delay: 0.015s;
+          animation-delay: 0.015s;
+}
+
+#loadingScreen p:nth-of-type(2) {
+  background: #bf5540;
+  -webkit-animation-delay: 0.03s;
+          animation-delay: 0.03s;
+}
+
+#loadingScreen p:nth-of-type(3) {
+  background: #bf6a40;
+  -webkit-animation-delay: 0.045s;
+          animation-delay: 0.045s;
+}
+
+#loadingScreen p:nth-of-type(4) {
+  background: #bf8040;
+  -webkit-animation-delay: 0.06s;
+          animation-delay: 0.06s;
+}
+
+#loadingScreen p:nth-of-type(5) {
+  background: #bf9540;
+  -webkit-animation-delay: 0.075s;
+          animation-delay: 0.075s;
+}
+
+#loadingScreen p:nth-of-type(6) {
+  background: #bfaa40;
+  -webkit-animation-delay: 0.09s;
+          animation-delay: 0.09s;
+}
+
+#loadingScreen p:nth-of-type(7) {
+  background: #bfbf40;
+  -webkit-animation-delay: 0.105s;
+          animation-delay: 0.105s;
+}
+
+#loadingScreen p:nth-of-type(8) {
+  background: #aabf40;
+  -webkit-animation-delay: 0.12s;
+          animation-delay: 0.12s;
+}
+
+#loadingScreen p:nth-of-type(9) {
+  background: #95bf40;
+  -webkit-animation-delay: 0.135s;
+          animation-delay: 0.135s;
+}
+
+#loadingScreen p:nth-of-type(10) {
+  background: #80bf40;
+  -webkit-animation-delay: 0.15s;
+          animation-delay: 0.15s;
+}
+
+#loadingScreen p:nth-of-type(11) {
+  background: #6abf40;
+  -webkit-animation-delay: 0.165s;
+          animation-delay: 0.165s;
+}
+
+#loadingScreen p:nth-of-type(12) {
+  background: #55bf40;
+  -webkit-animation-delay: 0.18s;
+          animation-delay: 0.18s;
+}
+
+#loadingScreen p:nth-of-type(13) {
+  background: #40bf40;
+  -webkit-animation-delay: 0.195s;
+          animation-delay: 0.195s;
+}
+
+#loadingScreen p:nth-of-type(14) {
+  background: #40bf55;
+  -webkit-animation-delay: 0.21s;
+          animation-delay: 0.21s;
+}
+
+#loadingScreen p:nth-of-type(15) {
+  background: #40bf6a;
+  -webkit-animation-delay: 0.225s;
+          animation-delay: 0.225s;
+}
+
+#loadingScreen p:nth-of-type(16) {
+  background: #40bf80;
+  -webkit-animation-delay: 0.24s;
+          animation-delay: 0.24s;
+}
+
+#loadingScreen p:nth-of-type(17) {
+  background: #40bf95;
+  -webkit-animation-delay: 0.255s;
+          animation-delay: 0.255s;
+}
+
+#loadingScreen p:nth-of-type(18) {
+  background: #40bfaa;
+  -webkit-animation-delay: 0.27s;
+          animation-delay: 0.27s;
+}
+
+#loadingScreen p:nth-of-type(19) {
+  background: #40bfbf;
+  -webkit-animation-delay: 0.285s;
+          animation-delay: 0.285s;
+}
+
+#loadingScreen p:nth-of-type(20) {
+  background: #40aabf;
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s;
+}
+
+#loadingScreen p:nth-of-type(21) {
+  background: #4095bf;
+  -webkit-animation-delay: 0.315s;
+          animation-delay: 0.315s;
+}
+
+#loadingScreen p:nth-of-type(22) {
+  background: #4080bf;
+  -webkit-animation-delay: 0.33s;
+          animation-delay: 0.33s;
+}
+
+#loadingScreen p:nth-of-type(23) {
+  background: #406abf;
+  -webkit-animation-delay: 0.345s;
+          animation-delay: 0.345s;
+}
+
+#loadingScreen p:nth-of-type(24) {
+  background: #4055bf;
+  -webkit-animation-delay: 0.36s;
+          animation-delay: 0.36s;
+}
+
+#loadingScreen p:nth-of-type(25) {
+  background: #4040bf;
+  -webkit-animation-delay: 0.375s;
+          animation-delay: 0.375s;
+}
+
+#loadingScreen p:nth-of-type(26) {
+  background: #5540bf;
+  -webkit-animation-delay: 0.39s;
+          animation-delay: 0.39s;
+}
+
+#loadingScreen p:nth-of-type(27) {
+  background: #6a40bf;
+  -webkit-animation-delay: 0.405s;
+          animation-delay: 0.405s;
+}
+
+#loadingScreen p:nth-of-type(28) {
+  background: #8040bf;
+  -webkit-animation-delay: 0.42s;
+          animation-delay: 0.42s;
+}
+
+#loadingScreen p:nth-of-type(29) {
+  background: #9540bf;
+  -webkit-animation-delay: 0.435s;
+          animation-delay: 0.435s;
+}
+
+#loadingScreen p:nth-of-type(30) {
+  background: #aa40bf;
+  -webkit-animation-delay: 0.45s;
+          animation-delay: 0.45s;
+}
+
+#loadingScreen p:nth-of-type(31) {
+  background: #bf40bf;
+  -webkit-animation-delay: 0.465s;
+          animation-delay: 0.465s;
+}
+
+#loadingScreen p:nth-of-type(32) {
+  background: #bf40aa;
+  -webkit-animation-delay: 0.48s;
+          animation-delay: 0.48s;
+}
+
+#loadingScreen p:nth-of-type(33) {
+  background: #bf4095;
+  -webkit-animation-delay: 0.495s;
+          animation-delay: 0.495s;
+}
+
+#loadingScreen p:nth-of-type(34) {
+  background: #bf4080;
+  -webkit-animation-delay: 0.51s;
+          animation-delay: 0.51s;
+}
+
+#loadingScreen p:nth-of-type(35) {
+  background: #bf406a;
+  -webkit-animation-delay: 0.525s;
+          animation-delay: 0.525s;
+}
+
+@-webkit-keyframes path {
+  to {
+    offset-distance: 100%;
+  }
+}
+
+@keyframes path {
+  to {
+    offset-distance: 100%;
+  }
+}
+
+@-webkit-keyframes dot {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes dot {
+  to {
+    opacity: 1;
+  }
+}
+
+@supports not (offset-rotate: 0deg) {
+  #loadingScreen body:before {
+    content: 'Sorry! you browser not supports!';
+    background: #dc3b3b;
+    padding: 10px 0;
+    text-align: center;
+    display: block;
+    color: #fff;
+  }
+}
+/*# sourceMappingURL=loadingScreen.css.map */

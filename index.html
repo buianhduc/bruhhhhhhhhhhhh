@@ -24,12 +24,20 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./dist/loading-bar.min.css" />
+    <link rel="stylesheet" href="dist/loadingBarJS/loading-bar.min.css" />
     <link rel="stylesheet" href="./stylesheets/quizPage.css" />
-    <script src="./dist/loading-bar.min.js"></script>
+    <link rel="stylesheet" href="./stylesheets/loadingScreen.css">
+    <script src="dist/loadingBarJS/loading-bar.min.js"></script>
+    <!-- <script src="node_modules/confetti-js/dist/index.min.js"></script> -->
+    <link rel="stylesheet" href="./stylesheets/confetti.css">
   </head>
   <body>
-    <div id="app"></div>
+    <div id="app">
+      <canvas height="1" id="confetti" width="1"></canvas>
+      <div class="container-fluid " id="text">
+        <h1 id="text">YOUR SCORE</h1>
+      </div> 
+    </div>
     <!-- JQuery -->
     <script
       type="text/javascript"
@@ -50,18 +58,23 @@
       type="text/javascript"
       src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"
     ></script>
-    
+
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-app.js"></script>
 
     <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
     <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.22.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.22.0/firebase-firestore.js"></script>
+  
     <script src="./scripts/components.js"></script>
-    <script src="./scripts/controller.js"></script>
+    <script src="./scripts/model.js"></script>
     <script src="./scripts/view.js"></script>
     <script src="./scripts/index.js"></script>
-    <script src="./scripts/model.js"></script>
-    
+    <script src="./scripts/controller.js"></script>
+
+    <!-- <script src="./stylesheets/confetti.js"></script> -->
+
   </body>
 </html>
